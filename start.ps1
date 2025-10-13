@@ -13,21 +13,6 @@ $frontendPath = Join-Path $projectRoot "frontend"
 $pythonExe = Join-Path $venvPath "Scripts\python.exe"
 $appPath = Join-Path $backendPath "app.py"
 
-# Função para iniciar Backend
-$backendScript = {
-    param($backendPath, $pythonExe, $appPath)
-    Set-Location -Path $backendPath
-    Write-Host "🚀 Iniciando Backend em http://localhost:5000" -ForegroundColor Green
-    & $pythonExe $appPath
-}
-
-# Função para iniciar Frontend
-$frontendScript = {
-    param($frontendPath)
-    Set-Location -Path $frontendPath
-    Write-Host "🚀 Iniciando Frontend em http://localhost:3000" -ForegroundColor Green
-    npm run dev
-}
 
 Write-Host "Iniciando servidores..." -ForegroundColor Yellow
 Write-Host ""
