@@ -1,0 +1,199 @@
+.header {
+  background: #D6FB49;
+  padding: 0.1rem 0;
+  position: fixed;
+  top: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  border-radius: 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.3rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0B2F3A;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: filter 0.3s ease;
+}
+
+.logo:hover .logo-image {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav a {
+  color: #0B2F3A;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0B2F3A;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: #071F27;
+}
+
+.nav .cta-button {
+  background: linear-gradient(135deg, #071F27 0%, #0B2F3A 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(7, 31, 39, 0.2);
+}
+
+.nav .cta-button::after {
+  display: none;
+}
+
+.nav .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(7, 31, 39, 0.3);
+  background: linear-gradient(135deg, #0B2F3A 0%, #071F27 100%);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    top: 0.75rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .header-content {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .nav {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    top: 0.5rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem 0;
+  }
+
+  .header-content {
+    padding: 0.3rem 1rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo-image {
+    height: 44px;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+
+  .nav .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .header-content {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .logo-image {
+    height: 38px;
+  }
+
+  .nav {
+    gap: 0.5rem;
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+  }
+
+  .nav .cta-button {
+    padding: 0.5rem 1rem;
+  }
+}
